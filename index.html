@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>video_pub</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#F7F8FA;
+    --surface:#FFFFFF;
+    --ink:#1C2024;
+    --ink-soft:#5B6470;
+    --accent:#3B5BA5;
+    --accent-soft:#E8EDF7;
+    --border:#E1E4E9;
+    --code-bg:#F0F2F5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#15181C; --surface:#1B1F24; --ink:#E7E9EC; --ink-soft:#9AA3AE;
+      --accent:#7FA3E0; --accent-soft:#1E2A3D; --border:#2A2E34; --code-bg:#20252B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#15181C; --surface:#1B1F24; --ink:#E7E9EC; --ink-soft:#9AA3AE;
+    --accent:#7FA3E0; --accent-soft:#1E2A3D; --border:#2A2E34; --code-bg:#20252B;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"IBM Plex Serif", Georgia, serif; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{ max-width:680px; margin:0 auto; padding:4rem 1.5rem 6rem; }
+  .eyebrow{
+    font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:0.8rem;
+    letter-spacing:0.08em; color:var(--accent); text-transform:uppercase;
+    display:inline-flex; align-items:center; gap:0.5rem;
+    background:var(--accent-soft); padding:0.3rem 0.7rem; border-radius:4px;
+  }
+  h1{
+    font-family:"IBM Plex Sans", system-ui, sans-serif; font-weight:600;
+    font-size:2.1rem; letter-spacing:-0.01em; margin:1.1rem 0 0.6rem; text-wrap:balance;
+  }
+  .lede{ font-size:1.05rem; color:var(--ink-soft); margin:0 0 2.5rem; max-width:58ch; }
+  section{margin-bottom:2.2rem;}
+  h2{
+    font-family:"IBM Plex Sans", system-ui, sans-serif; font-weight:600;
+    font-size:0.95rem; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--accent); margin:0 0 0.8rem; padding-bottom:0.5rem;
+    border-bottom:1px solid var(--border);
+  }
+  p{margin:0 0 0.9rem; max-width:62ch;}
+  ul{margin:0 0 0.9rem; padding-left:1.3rem;}
+  li{margin-bottom:0.4rem;}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:2px;}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  code{
+    font-family:"IBM Plex Mono", ui-monospace, monospace; background:var(--code-bg);
+    padding:0.15em 0.4em; border-radius:3px; font-size:0.9em;
+  }
+  .links{
+    display:flex; gap:1.2rem; font-family:"IBM Plex Sans", sans-serif; font-size:0.95rem;
+  }
+  footer{
+    margin-top:3.5rem; padding-top:1.5rem; border-top:1px solid var(--border);
+    font-family:"IBM Plex Mono", monospace; font-size:0.85rem; color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <span class="eyebrow">video_pub</span>
+  <h1>video_pub</h1>
+  <p class="lede">A personal publishing automation tool — pushes pre-edited educational video clips to the operator's own social accounts via each platform's official API.</p>
+
+  <section>
+    <h2>What it does</h2>
+    <p><code>video_pub</code> is operated by a single creator (SuperVictor) to publish their own Linux/networking tutorial clips to their own accounts on YouTube and TikTok. It is a backend script, not a public service — it has no sign-up flow and no other users.</p>
+    <ul>
+      <li>Authenticates once per platform via that platform's own OAuth flow.</li>
+      <li>Uploads a video file and caption that the operator has already produced and reviewed.</li>
+      <li>Confirms the publish completed successfully.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Legal</h2>
+    <div class="links">
+      <a href="terms.html">Terms of Service →</a>
+      <a href="privacy.html">Privacy Policy →</a>
+    </div>
+  </section>
+
+  <footer>Contact: frankybboy61@gmail.com</footer>
+</div>
+</body>
+</html>
