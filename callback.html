@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>video_pub — Authorization</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#F7F8FA; --surface:#FFFFFF; --ink:#1C2024; --ink-soft:#5B6470;
+    --accent:#3B5BA5; --accent-soft:#E8EDF7; --border:#E1E4E9; --code-bg:#F0F2F5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#15181C; --surface:#1B1F24; --ink:#E7E9EC; --ink-soft:#9AA3AE;
+      --accent:#7FA3E0; --accent-soft:#1E2A3D; --border:#2A2E34; --code-bg:#20252B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#15181C; --surface:#1B1F24; --ink:#E7E9EC; --ink-soft:#9AA3AE;
+    --accent:#7FA3E0; --accent-soft:#1E2A3D; --border:#2A2E34; --code-bg:#20252B;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:var(--bg); color:var(--ink); font-family:"IBM Plex Sans", system-ui, sans-serif;
+  }
+  .card{
+    max-width:560px; width:100%; margin:1.5rem; padding:2.5rem;
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+  }
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace; font-size:0.8rem; letter-spacing:0.08em;
+    color:var(--accent); text-transform:uppercase; display:inline-flex;
+    background:var(--accent-soft); padding:0.3rem 0.7rem; border-radius:4px;
+  }
+  h1{ font-size:1.4rem; font-weight:600; margin:1rem 0 0.5rem; }
+  p{ color:var(--ink-soft); line-height:1.6; margin:0 0 1.2rem; }
+  .box{
+    font-family:"IBM Plex Mono", monospace; font-size:0.85rem; word-break:break-all;
+    background:var(--code-bg); border:1px solid var(--border); border-radius:6px;
+    padding:1rem; margin-bottom:1rem; user-select:all;
+  }
+  .label{
+    font-family:"IBM Plex Sans", sans-serif; font-size:0.78rem; letter-spacing:0.04em;
+    text-transform:uppercase; color:var(--ink-soft); margin-bottom:0.4rem;
+  }
+  button{
+    font-family:"IBM Plex Sans", sans-serif; font-size:0.9rem; font-weight:500;
+    background:var(--accent); color:#fff; border:none; border-radius:6px;
+    padding:0.6rem 1.1rem; cursor:pointer;
+  }
+  button:hover{ opacity:0.9; }
+  button:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .copied{ color:var(--accent); font-family:"IBM Plex Mono", monospace; font-size:0.85rem; margin-left:0.8rem; }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="eyebrow">video_pub</span>
+  <h1>Authorization received</h1>
+  <p>Copy the full URL below (or just the code) and paste it back into the terminal running <code>tiktok_upload.py</code>.</p>
+
+  <div class="label">Full redirected URL</div>
+  <div class="box" id="fullUrl"></div>
+  <button onclick="copyIt('fullUrl', this)">Copy full URL</button>
+  <span class="copied" id="copiedMsg" style="display:none;">Copied ✓</span>
+</div>
+
+<script>
+  document.getElementById('fullUrl').textContent = window.location.href;
+
+  function copyIt(id, btn) {
+    const text = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const msg = document.getElementById('copiedMsg');
+      msg.style.display = 'inline';
+      setTimeout(() => { msg.style.display = 'none'; }, 2000);
+    });
+  }
+</script>
+</body>
+</html>
