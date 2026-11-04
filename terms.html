@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>video_pub Terms</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#F7F8FA;
+    --surface:#FFFFFF;
+    --ink:#1C2024;
+    --ink-soft:#5B6470;
+    --accent:#3B5BA5;
+    --accent-soft:#E8EDF7;
+    --border:#E1E4E9;
+    --code-bg:#F0F2F5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#15181C;
+      --surface:#1B1F24;
+      --ink:#E7E9EC;
+      --ink-soft:#9AA3AE;
+      --accent:#7FA3E0;
+      --accent-soft:#1E2A3D;
+      --border:#2A2E34;
+      --code-bg:#20252B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#15181C;
+    --surface:#1B1F24;
+    --ink:#E7E9EC;
+    --ink-soft:#9AA3AE;
+    --accent:#7FA3E0;
+    --accent-soft:#1E2A3D;
+    --border:#2A2E34;
+    --code-bg:#20252B;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"IBM Plex Serif", Georgia, "Times New Roman", serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:680px;
+    margin:0 auto;
+    padding:4rem 1.5rem 6rem;
+  }
+  .eyebrow{
+    font-family:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size:0.8rem;
+    letter-spacing:0.08em;
+    color:var(--accent);
+    text-transform:uppercase;
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    background:var(--accent-soft);
+    padding:0.3rem 0.7rem;
+    border-radius:4px;
+  }
+  h1{
+    font-family:"IBM Plex Sans", system-ui, sans-serif;
+    font-weight:600;
+    font-size:2.1rem;
+    letter-spacing:-0.01em;
+    margin:1.1rem 0 0.4rem;
+    text-wrap:balance;
+  }
+  .meta{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin:0 0 2.5rem;
+  }
+  .meta strong{color:var(--ink);font-weight:500;}
+
+  section{margin-bottom:2.2rem;}
+  h2{
+    font-family:"IBM Plex Sans", system-ui, sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 0.8rem;
+    padding-bottom:0.5rem;
+    border-bottom:1px solid var(--border);
+  }
+  h2 .num{
+    font-family:"IBM Plex Mono", monospace;
+    color:var(--ink-soft);
+    margin-right:0.6em;
+  }
+  p{margin:0 0 0.9rem; max-width:62ch;}
+  ul{margin:0 0 0.9rem; padding-left:1.3rem;}
+  li{margin-bottom:0.4rem;}
+  a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:2px;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  code{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    background:var(--code-bg);
+    padding:0.15em 0.4em;
+    border-radius:3px;
+    font-size:0.9em;
+  }
+
+  footer{
+    margin-top:3.5rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--border);
+    font-family:"IBM Plex Sans", system-ui, sans-serif;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:0.75rem;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <span class="eyebrow">video_pub · legal</span>
+  <h1>Terms of Service</h1>
+  <p class="meta">Last updated: <strong>November 4, 2026</strong> &nbsp;·&nbsp; Applies to: <strong>video_pub</strong> (TikTok Content Posting integration)</p>
+
+  <section>
+    <h2><span class="num">01</span>What this is</h2>
+    <p><code>video_pub</code> is a personal automation tool operated by its developer to publish their own pre-produced video content to their own TikTok account via the TikTok Content Posting API. It is not a public, multi-tenant service — it is not offered for other parties to sign up for or use.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Acceptance</h2>
+    <p>By authorizing <code>video_pub</code> to connect to a TikTok account, the account holder agrees to these terms. If you don't agree, don't complete the authorization flow.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Scope of use</h2>
+    <p>The tool is authorized against a single TikTok account controlled by its operator. It performs exactly two actions, both initiated manually by the operator:</p>
+    <ul>
+      <li>Uploading a video file and caption to the authorized account via the Content Posting API.</li>
+      <li>Reading the publish status of that upload to confirm it completed.</li>
+    </ul>
+    <p>It does not browse, follow, message, like, comment, or act on any other account.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Content responsibility</h2>
+    <p>The operator is solely responsible for every video and caption published through this tool, and for that content's compliance with TikTok's own <a href="https://www.tiktok.com/community-guidelines" target="_blank" rel="noopener">Community Guidelines</a> and <a href="https://www.tiktok.com/legal/page/row/terms-of-service/en" target="_blank" rel="noopener">Terms of Service</a>.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>No warranty</h2>
+    <p>Provided as-is, with no guarantee of uptime, availability, or fitness for any purpose beyond the operator's own use. TikTok platform changes may break functionality without notice.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Changes</h2>
+    <p>These terms may be revised as the tool's scope changes. The "Last updated" date above reflects the current version.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Contact</h2>
+    <p>Questions about this tool: <a href="mailto:frankybboy61@gmail.com">frankybboy61@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <span>video_pub</span>
+    <a href="privacy.html">Privacy Policy →</a>
+  </footer>
+</div>
+</body>
+</html>
